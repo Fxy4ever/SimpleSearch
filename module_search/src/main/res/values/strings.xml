@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">module_search</string>
+    <string name="search_fragment_input_str">输入姓名或学号</string>
+    <string name="search_et_input">请输入学号或姓名</string>
+    <string name="search_btn_to">搜索</string>
+    <string name="lisences">本软件仅作为日常查询使用 其他用途与作者无关</string>
+    <string name="search_btn_back">返回</string>
+    <string name="search_tv_not_found">未找到查询结果</string>
+</resources>

@@ -1,0 +1,20 @@
+apply from: module_config
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':lib_common')
+    def nav_version = '1.0.0-alpha01'
+    implementation "android.arch.navigation:navigation-fragment:$nav_version"
+    implementation "android.arch.navigation:navigation-ui:$nav_version"
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    kapt deps.arouter.compiler
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
