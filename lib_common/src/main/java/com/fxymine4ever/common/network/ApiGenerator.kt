@@ -37,4 +37,6 @@ object ApiGenerator{
     }
 
     fun <T> getApiService(clazz: Class<T>) = retrofit.create(clazz)
+
+
 }

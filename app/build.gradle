@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion build_versions.target_sdk
-    buildToolsVersion build_versions.build_tools
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.fxymine4ever.cycx"
@@ -31,27 +31,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-//        debug{
-//
-//        }
+        debug{
+            minifyEnabled false
+            zipAlignEnabled false
+            versionNameSuffix "-debug"
+        }
     }
 
-    signingConfigs{
-        //写在gradle.properties里
-//        debug {
-//            storeFile file(RELEASE_STORE_FILE)
-//            storePassword RELEASE_STORE_PASSWORD
-//            keyAlias RELEASE_KEY_ALIAS
-//            keyPassword RELEASE_KEY_PASSWORD
-//        }
-//
-//        release {
-//            storeFile file(RELEASE_STORE_FILE)
-//            storePassword RELEASE_STORE_PASSWORD
-//            keyAlias RELEASE_KEY_ALIAS
-//            keyPassword RELEASE_KEY_PASSWORD
-//        }
-    }
 
     android.applicationVariants.all { variant ->
         variant.outputs.each { out ->
@@ -59,9 +45,9 @@ android {
                 if ('release' == variant.buildType.name) {
                     def flavorName = variant.flavorName.startsWith("_") ?
                             variant.flavorName.substring(1) : variant.flavorName
-                    out.outputFileName = "重邮查询_${flavorName}_${variant.versionName}.apk"
+                    out.outputFileName = "简单查询_${flavorName}_${variant.versionName}.apk"
                 } else if ('debug' == variant.buildType.name) {
-                    out.outputFileName = "重邮查询_${variant.versionName}_debug.apk"
+                    out.outputFileName = "简单查询_${variant.versionName}_debug.apk"
                 }
             }
         }

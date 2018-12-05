@@ -15,7 +15,7 @@ apply plugin: 'kotlin-kapt'
 android {
     //这里在version.gradle中配置了
     compileSdkVersion build_versions.target_sdk
-    buildToolsVersion build_versions.build_tools
+    buildToolsVersion '27.0.3'
 
     //resourcePrefix "${project.getName().replaceAll("lib_", "")}_"
 

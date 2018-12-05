@@ -40,7 +40,7 @@ class QueryStuAdapter(val mContext: Context,
                         dialog.setContentView(R.layout.search_show_img_dialog)
                         val imageView = dialog.findViewById<ImageView>(R.id.show_img)
                         Glide.with(mContext)
-                                .load("http://120.79.143.238/cqupt/photos/"+stu.stuNum+".jpg")
+                                .load("https://fxy.red/photos/"+stu.stuNum+".jpg")
                                 .into(imageView)
                         dialog.setCanceledOnTouchOutside(true)
                         val defaultDisplay = (mContext as Activity).windowManager.defaultDisplay
