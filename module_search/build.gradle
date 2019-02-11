@@ -11,6 +11,7 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment:$nav_version"
     implementation "android.arch.navigation:navigation-ui:$nav_version"
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    implementation 'com.github.razerdp:BasePopup:2.1.8'
     kapt deps.arouter.compiler
 }
 kotlin {

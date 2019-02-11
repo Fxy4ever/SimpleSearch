@@ -19,9 +19,12 @@ class ContainerActivity : BaseActivity() {
         setContentView(R.layout.main_activity_container)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         common_toolbar.init("简单查询",R.drawable.navigation_empty_icon,null)
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container,ARouter.getInstance().build("/search/SearchConFragment").navigation() as Fragment)
-        transaction.commit()
+        ARouter.getInstance().build("/search/SearchConFragment").navigation()?.let {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container,it as Fragment)
+            transaction.commit()
+        }
+
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
